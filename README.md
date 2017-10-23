@@ -52,7 +52,22 @@ The Habitat application has been modelled following the WoT model: https://www.w
   "interaction": [
       {
           "@type": ["Action"],
-          "name": "onMessage",
+          "name": "showMessage",
+          "inputData":{"type":"..."}
+      }
+  ]
+}
+```
+## Tablet ##
+```json
+{
+  "@context": ["http://w3c.github.io/wot/w3c-wot-td-context.jsonld",{"hbt":"http://www.habitatproject.info/ontology#"}],
+  "@type": ["Thing"],
+  "name": "Tablet",
+  "interaction": [
+      {
+          "@type": ["Action"],
+          "name": "showMessage",
           "inputData":{"type":"..."}
       },
       {
@@ -70,16 +85,6 @@ The Habitat application has been modelled following the WoT model: https://www.w
   "@type": ["Thing"],
   "name": "AIModule",
   "interaction": [
-      {
-          "@type": ["Action"],
-          "name": "onPosition",
-          "inputData": {"type":"..."}
-      },
-       {
-          "@type": ["Action"],
-          "name": "onFeedback",
-          "inputData": {"type":"..."}
-      },
       {
           "@type": ["Event"],
           "name": "alarm",
