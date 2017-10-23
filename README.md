@@ -13,7 +13,12 @@ The Habitat application has been modelled following the WoT model: https://www.w
       {
           "@type": ["Event"],
           "name": "position",
-          "outputData": {"type": "..."}
+          "outputData": {
+              "type": "object",
+              "fields": [{"name": "tabletId","value": {"type": "string"}},
+                         {"name": "eventId","value": {"type": "string"}},
+                         {"name": "message", "value": {"type": "string"}}}
+    ]}
       }
   ]
 }
@@ -53,7 +58,26 @@ The Habitat application has been modelled following the WoT model: https://www.w
       {
           "@type": ["Action"],
           "name": "showMessage",
-          "inputData":{"type":"..."}
+          "inputData":{"type":"string"}
+      },
+      {
+          "@type": ["Action"],
+          "name": "showMessageWithFeedback",
+          "inputData":{
+              "type": "object",
+              "fields": [{"name": "eventId","value": {"type": "string"}},
+                         {"name": "message", "value": {"type": "string"}}}
+    ]}
+      },
+      {
+          "@type": ["Event"],
+          "name": "feedback",
+          "outputData": {
+              "type": "object",
+              "fields": [{"name": "tabletId","value": {"type": "string"}},
+                         {"name": "eventId","value": {"type": "string"}},
+                         {"name": "message", "value": {"type": "string"}}}
+    ]}
       }
   ]
 }
@@ -68,12 +92,26 @@ The Habitat application has been modelled following the WoT model: https://www.w
       {
           "@type": ["Action"],
           "name": "showMessage",
-          "inputData":{"type":"..."}
+          "inputData":{"type":"string"}
+      },
+      {
+          "@type": ["Action"],
+          "name": "showMessageWithFeedback",
+          "inputData":{
+              "type": "object",
+              "fields": [{"name": "eventId","value": {"type": "string"}},
+                         {"name": "message", "value": {"type": "string"}}}
+    ]}
       },
       {
           "@type": ["Event"],
           "name": "feedback",
-          "outputData": {"type": "..."}
+          "outputData": {
+              "type": "object",
+              "fields": [{"name": "tabletId","value": {"type": "string"}},
+                         {"name": "eventId","value": {"type": "string"}},
+                         {"name": "message", "value": {"type": "string"}}}
+    ]}
       }
   ]
 }
