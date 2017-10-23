@@ -88,7 +88,31 @@ The Habitat application has been modelled following the WoT model: https://www.w
       {
           "@type": ["Event"],
           "name": "alarm",
-          "outputData": {"type": "..."}
+          "outputData": {
+              "type": "object",
+              "fields": [
+                      {
+                        "name": "id",
+                        "value": {
+                            "type": "string"
+                      }},
+                    {
+                          "name": "type",
+                          "value": {
+                              "type": "string"
+                    },
+                    {
+                          "name": "message",
+                          "value": {
+                              "type": "string"
+                    },
+                    {
+                          "name": "private",
+                          "value": {
+                              "type": "boolean"
+                    }
+        }
+    ]}
       },
       {
           "@type": ["Event"],
